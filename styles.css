@@ -1,0 +1,63 @@
+:root{  /* le dice al navegador que se aplique a todos los elementos */
+     /* pero como declaramos variables no se aplicaran inmendiatamente, solo estaran disponilbes para cada uno de los elementos */
+     --color-brad-primary: #a1603b;
+    --color-brand-contrast: #fff;
+    --color-medium-gray: #898989;
+    --color-light-gray: #ccc;
+    --color-background: #e5e5e5;
+    --font-body: 'Segoe UI', arial, Helvetica, sans-serif;
+}
+
+header{
+    /*de esta manera se selecciona la variable*/
+    background-color: var(--color-brad-primary);
+}
+
+html, body{
+    /*reset---Algunos navegadores tienen valores por default, con esto lo reseteamos*/
+    margin:0;
+    padding:0;
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    
+}
+
+/*Navigation*/
+nav ul{
+    margin: 0;
+    padding: 0;
+}
+
+nav > ul > li{
+/*esto significa que los elementos aparcen en linea uno tras otro, pero se puede controlar el ancho y la altura*/
+    display: inline-block;
+    list-style: none; /*esto elimina la viñeta que aparece en cada elemento de la lista*/
+    margin: 0 1.5em 0 1.5em; /* top | right | bottom | left */
+    vertical-align: middle;
+}
+
+nav > ul > li:first-child{/*solo se aplica para el logo, que es el primer elemento*/
+    margin: 0.5em;
+    padding: 0;
+}
+
+nav ul li a,
+nav ul li a:active,
+nav ul li a:hover,
+nav ul li a:visited{
+    color: var(--color-brand-contrast);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+/* heading */
+
+h1{
+    color: var(--color-brad-primary);
+}
+
+article{
+    padding: 2em;
+}
