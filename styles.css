@@ -61,3 +61,92 @@ h1{
 article{
     padding: 2em;
 }
+
+#calculator{
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    border: solid 1px var(--color-medium-gray);
+    border-radius: 1em;
+    padding: 1.5em;
+    width: 90%; 
+    /* ocupa el 90% del contenedor */
+    max-width: 325px;
+    background-color: var(--color-brand-contrast);
+    margin-top:  2em;
+}
+
+#calculator h2{
+    margin: .5em 0 .5em 0;
+}
+
+#calculator input{
+    padding: 5px;
+    border-radius: 3px;
+    border: solid 1px var(--color-medium-gray);
+    width: 150px;
+}
+
+footer{
+    margin: 3em 0;
+    padding: 1em;
+    background-color: var(--color-light-gray);
+}
+
+footer address{
+    font-style: normal;
+}
+
+footer address h2,
+footer address p{
+    margin:0;
+}
+
+footer address h2{
+    font-size: 1.25em;
+}
+
+/* Liquid layout */
+
+.logo-container{
+    display:none;
+}
+
+@media(min-width:960px){
+    main{
+        display:flex;
+        flex-direction: row-reverse;
+    }
+
+    article, aside{
+        display:block;
+        flex-basis: 0;
+        /* esta propiedad determina el tamaño nicial del element0, al ponerlo en 0 le dices al navegador que no ocupe espacio horizontal */
+        flex-shrink: 1;
+        /* especifica cuanto debe reducirse un elemento si no hay suficiente espacio disponible en el contenedor para mostrar todos los elementos en su tamaño completo,
+        en este caso el valor 1 siginifica que el elemento se encogera porporcionalmente a la cantidad de espacio que debe ceder 
+        estas dos reglas permiten que los elementos flexibles cambien en el tamaño de su contenedor. 
+        La regla de flex-basis 0 garantiza que cada elemento comience sin un tamaño predefinido, para 
+        que puedan ajustarse al espacio disponible. Y flex‑shrink establece cómo debe encogerse cada elemento para que quepa en su contenedor.*/
+        padding: 0.75rem;            
+    }
+    article{
+        flex: 4;
+        padding-right: 6em;
+    }
+    aside{
+        flex: 1;
+    }
+
+    footer{
+        padding-left: 20%;
+    }
+
+    .logo-container{
+        display: block;
+        text-align: center;
+        padding-top: 2em;
+    }
+
+    .logo-container img{
+        max-width: 120px;
+    }
+}
